@@ -1,0 +1,12 @@
+= form_for @story do |f|
+  %p
+    = f.label :title
+    = f.text_field :title
+
+  %p
+    = f.label :description
+    = f.text_field :description
+
+  = f.submit
+
+= link_to 'Back', stories_path

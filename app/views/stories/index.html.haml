@@ -6,3 +6,4 @@
   - @stories.each do |story|
     %h2= link_to story.title, story
     = simple_format story.description
+    = link_to 'Edit story', edit_story_path(story)
