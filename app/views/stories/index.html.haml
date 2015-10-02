@@ -2,8 +2,17 @@
 
 = link_to 'New story', new_story_path
 
-.stories
-  - @stories.each do |story|
-    %h2= link_to h(story.title), story
-    = simple_format h(story.description)
-    = link_to 'Edit story', edit_story_path(story)
+%table
+  %tr
+    %th Title:
+    %th Text:
+
+    .stories
+    - @stories.each do |story|
+      %tr
+        %td= link_to h(story.title), story
+        %td= simple_format h(story.description)
+        %td= link_to 'Edit', edit_story_path(story)
+        %td= link_to 'Destroy', story_path(story),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' }

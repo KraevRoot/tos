@@ -35,6 +35,12 @@ class StoriesController < ApplicationController
     @story = Story.find(params[:id])
   end
 
+  def destroy
+    @story = Story.find(params[:id])
+    @story.destroy
+    redirect_to stories_path
+  end
+
   private
 
   def story_params
