@@ -6,3 +6,6 @@
 
 = link_to 'Stories', stories_path
 = link_to 'Edit', edit_story_path(@story)
+= link_to 'Destroy', story_path(@story),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
