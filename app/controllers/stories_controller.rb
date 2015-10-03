@@ -1,4 +1,5 @@
 class StoriesController < ApplicationController
+  before_filter :authorize, only: [:new, :edit, :update, :destroy]
 
   def index
     @stories = Story.all
