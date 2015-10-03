@@ -1,21 +1,18 @@
 %h3 Stories:
 
-%header
-  = link_to 'Sign Up', new_user_path
+= link_to 'New story', new_story_path
 
-  = link_to 'New story', new_story_path
+%table
+  %tr
+    %th Title:
+    %th Text:
 
-  %table
-    %tr
-      %th Title:
-      %th Text:
-
-      .stories
-      - @stories.each do |story|
-        %tr
-          %td= link_to h(story.title), story
-          %td= simple_format h(story.description)
-          %td= link_to 'Edit', edit_story_path(story)
-          %td= link_to 'Destroy', story_path(story),
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' }
+    .stories
+    - @stories.each do |story|
+      %tr
+        %td= link_to h(story.title), story
+        %td= simple_format h(story.description)
+        %td= link_to 'Edit', edit_story_path(story)
+        %td= link_to 'Destroy', story_path(story),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' }
