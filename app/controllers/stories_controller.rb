@@ -1,4 +1,5 @@
 class StoriesController < ApplicationController
+
   def index
     @stories = Story.all
   end
@@ -11,10 +12,9 @@ class StoriesController < ApplicationController
     @story = Story.new(story_params)
 
     if @story.save
-      flash[:notice] = "Story successfully created."
-      redirect_to @story
+      redirect_to @story, notice: 'Story successfully created.'
     else
-      flash[:alert] = "Something going wrong."
+      render 'edit'
     end
   end
 
@@ -24,8 +24,9 @@ class StoriesController < ApplicationController
 
   def update
     @story = Story.find(params[:id])
+
     if @story.update(story_params)
-      redirect_to stories_path
+      redirect_to stories_path, notice: 'Story successfully updated.'
     else
       render 'edit'
     end
@@ -38,7 +39,7 @@ class StoriesController < ApplicationController
   def destroy
     @story = Story.find(params[:id])
     @story.destroy
-    redirect_to stories_path
+    redirect_to stories_path, notice: 'Story successfully destroyed.'
   end
 
   private
