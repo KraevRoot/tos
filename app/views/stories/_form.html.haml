@@ -1,20 +1,7 @@
-= form_for @story do |f|
-  - if @story.errors.any?
-    .error_messages
-      %ul
-        - @story.errors.full_messages.each do |message|
-          %li= message
-
-  %p
-    = f.label :title
-    = f.text_field :title
-    %br
-
-  %p
-    = f.label :description
-    = f.text_field :description
-    %br
-
-  = f.submit
+= simple_form_for @story do |f|
+  = f.error_notification
+  = f.input :title, placeholder: 'input title'
+  = f.input :description, placeholder: 'input story'
+  = f.button :submit
 
 = link_to 'Back', stories_path
