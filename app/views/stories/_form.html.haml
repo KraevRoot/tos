@@ -1,7 +1,7 @@
 = simple_form_for @story do |f|
   = f.error_notification
-  = f.input :title, placeholder: 'input title'
-  = f.input :description, placeholder: 'input story'
+  = f.input :title, placeholder: 'enter title'
+  = f.input :description, placeholder: 'story'
   = f.button :submit
 
 = link_to 'Back', stories_path
