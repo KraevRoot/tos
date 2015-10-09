@@ -20,11 +20,11 @@ class StoriesController < ApplicationController
   end
 
   def edit
-    @story = Story.find(params[:id])
+    @story = Story.friendly.find(params[:id])
   end
 
   def update
-    @story = Story.find(params[:id])
+    @story = Story.friendly.find(params[:id])
 
     if @story.update(story_params)
       redirect_to stories_path, notice: 'Story successfully updated.'
@@ -34,11 +34,11 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @story = Story.find(params[:id])
+    @story = Story.friendly.find(params[:id])
   end
 
   def destroy
-    @story = Story.find(params[:id])
+    @story = Story.friendly.find(params[:id])
     @story.destroy
     redirect_to stories_path, notice: 'Story successfully destroyed.'
   end
