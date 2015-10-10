@@ -27,7 +27,7 @@ class StoriesController < ApplicationController
     @story = Story.friendly.find(params[:id])
 
     if @story.update(story_params)
-      redirect_to stories_path, notice: 'Story successfully updated.'
+      redirect_to @story, notice: 'Story successfully updated.'
     else
       render 'edit'
     end
@@ -35,6 +35,10 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.friendly.find(params[:id])
+
+    if request.path != story_path(@story)
+      redirect_to @story, status: :moved_permanently
+    end
   end
 
   def destroy
