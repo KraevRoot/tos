@@ -1,6 +1,8 @@
 class Story < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
+  has_and_belongs_to_many :users
+  
   validates :title, :description, presence: true
   validates :title, uniqueness: :true
 
