@@ -1,0 +1,6 @@
+%h1 Profile
+%p= current_user.name
+%p= current_user.email
+
+= link_to 'Edit', edit_user_path(current_user)
+= link_to 'Stories', stories_path

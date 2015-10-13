@@ -1,0 +1,9 @@
+= simple_form_for @user do |f|
+  = f.error_notification
+  = f.input :name, placeholder: 'username'
+  = f.input :email, placeholder: 'email'
+  = f.input :password, placeholder: 'password'
+  = f.input :password_confirmation, placeholder: 'password'
+  = f.button :submit
+
+= link_to 'Back', stories_path
