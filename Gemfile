@@ -9,8 +9,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'haml-rails', '~> 0.9'
 gem 'simple_form'
 gem 'friendly_id', '~> 5.0.0'
-gem "paperclip", "~> 4.3"
-
+gem 'paperclip', '~> 4.3'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'bootstrap', '~> 4.0.0.alpha1'
 
 gem 'jquery-rails'
 gem 'turbolinks'
