@@ -1,11 +1,13 @@
-
 %h3 Title:
 %p= @story.title
 %h3 Description:
 %p= @story.description
 
-= link_to 'Stories', stories_path
-= link_to 'Edit', edit_story_path(@story)
-= link_to 'Destroy', story_path(@story),
-              method: :delete,
-              data: { confirm: 'Are you sure?' }
+.btn
+  = link_to 'Stories', stories_path
+.btn.btn-warning
+  = link_to 'Edit', edit_story_path(@story)
+.btn.btn-danger
+  = link_to 'Destroy', story_path(@story),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' }

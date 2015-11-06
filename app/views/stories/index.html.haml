@@ -1,18 +1,24 @@
 %h3 Stories:
 
-= link_to 'New story', new_story_path
-.table
+.btn.btn-primary
+  = link_to 'New story', new_story_path
+
+.table.table-hover
   %table
     %tr
       %th Title:
       %th Text:
-
-      #stories
+      %th
+      %th
       - @stories.each do |story|
         %tr
           %td= link_to h(story.title), story
           %td= simple_format h(story.description)
-          %td= link_to 'Edit', edit_story_path(story)
-          %td= link_to 'Destroy', story_path(story),
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' }
+          %td
+            .btn.btn-warning
+              = link_to 'Edit', edit_story_path(story)
+          %td
+            .btn.btn-danger
+              = link_to 'Destroy', story_path(story),
+                                    method: :delete,
+                                    data: { confirm: 'Are you sure?' }
