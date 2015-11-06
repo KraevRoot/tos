@@ -2,5 +2,8 @@
 %p= current_user.name
 %p= current_user.email
 %p= image_tag current_user.avatar(:small)
-= link_to 'Edit', edit_user_path(current_user)
-= link_to 'Stories', stories_path
+
+.btn
+  = link_to 'Stories', stories_path
+.btn.btn-warning
+  = link_to 'Edit', edit_user_path(current_user)
