@@ -7,32 +7,31 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    #header
-      .navbar
-        %ul
-          - if current_user
-            %li
-              .btn
-                = link_to 'Log Out', logout_path
-            %li
-              .btn
-                = link_to 'Profile', user_path(current_user)
-            #login
-              Logged in as
-              = image_tag current_user.avatar(:thumb)
-              = current_user.email
-          - else
-            %li
-              .btn.btn-primary
-                = link_to 'Sign Up', signup_path
-            %li
-              .btn.btn-primary
-                = link_to 'Log In', login_path
+    %nav
+      %ul
+        - if current_user
+          %li
+            .btn
+              = link_to 'Log Out', logout_path
+          %li
+            .btn
+              = link_to 'Profile', user_path(current_user)
+          #login
+            Logged in as
+            = image_tag current_user.avatar(:thumb)
+            = current_user.email
+        - else
+          %li
+            .btn.btn-primary
+              = link_to 'Sign Up', signup_path
+          %li
+            .btn.btn-primary
+              = link_to 'Log In', login_path
 
       - flash.each do |name, msg|
         = content_tag :div, msg, id: "flash_#{name}"
 
-      = yield
+    = yield
 
     #footer
       Created by KraevRoot:
