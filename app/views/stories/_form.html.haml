@@ -2,7 +2,7 @@
   = f.error_notification
   = f.input :title, placeholder: 'enter title'
   = f.input :description, placeholder: 'story'
+  = f.input :tag_names, placeholder: 'tags'
   = f.button :submit
 
-.btn
-  = link_to 'Back', stories_path
+= link_to 'Back', stories_path, :class => 'btn'
