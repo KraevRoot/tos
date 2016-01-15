@@ -18,10 +18,8 @@
         %td= simple_format h(story.description)
         %td= render story.tags
         %td
-          .btn.btn-warning
-            = link_to 'Edit', edit_story_path(story)
+          = link_to 'Edit', edit_story_path(story), :class => 'btn btn-warning'
         %td
-          .btn.btn-danger
-            = link_to 'Destroy', story_path(story),
-                                  method: :delete,
-                                  data: { confirm: 'Are you sure?' }
+          = link_to 'Destroy', story_path(story), :class => 'btn btn-danger',
+                                method: :delete, 
+                                data: { confirm: 'Are you sure?' }

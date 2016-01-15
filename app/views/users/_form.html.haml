@@ -5,7 +5,7 @@
   = f.input :password, placeholder: 'password'
   = f.input :password_confirmation, placeholder: 'password'
   = f.input :avatar, as: :file
+  %br
   = f.button :submit
 
-.btn
-  = link_to 'Back', stories_path
+= link_to 'Back', stories_path, :class => 'btn'

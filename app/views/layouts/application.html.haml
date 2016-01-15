@@ -12,22 +12,18 @@
         %ul
           - if current_user
             %li
-              .btn
-                = link_to 'Log Out', logout_path
+              = link_to 'Log Out', logout_path, :class => 'btn'
             %li
-              .btn
-                = link_to 'Profile', user_path(current_user)
+              = link_to 'Profile', user_path(current_user), :class => 'btn'
             #login
               Logged in as
               = image_tag current_user.avatar(:thumb)
               = current_user.email
           - else
             %li
-              .btn.btn-primary
-                = link_to 'Sign Up', signup_path
+              = link_to 'Sign Up', signup_path, :class => 'btn'
             %li
-              .btn.btn-primary
-                = link_to 'Log In', login_path
+              = link_to 'Log In', login_path, :class => 'btn'
 
       - flash.each do |name, msg|
         = content_tag :div, msg, id: "flash_#{name}"
