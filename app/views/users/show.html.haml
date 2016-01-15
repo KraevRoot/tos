@@ -3,7 +3,5 @@
 %p= current_user.email
 %p= image_tag current_user.avatar(:small)
 
-.btn
-  = link_to 'Stories', stories_path
-.btn.btn-warning
-  = link_to 'Edit', edit_user_path(current_user)
+= link_to 'Stories', stories_path, :class => 'btn'
+= link_to 'Edit', edit_user_path(current_user), :class => 'btn btn-warning'
