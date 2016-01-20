@@ -2,6 +2,8 @@ class Story < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
 
+  belongs_to :user
+
   attr_accessor :tag_names
 
   has_and_belongs_to_many :tags 

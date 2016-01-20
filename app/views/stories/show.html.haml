@@ -2,6 +2,9 @@
 %p= @story.title
 %h3 Description:
 %p= @story.description
+.story_author
+  %h3 Created by
+  %p= @story.user.name
 
 = link_to 'Stories', stories_path, :class => 'btn'
 

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
   has_attached_file :avatar, styles: { thumb: '50x50#', small: '100x100#' }
+  has_many :stories
 
   validates :avatar, attachment_presence: true
   validates_attachment_content_type :avatar, content_type: /\Aimage/
