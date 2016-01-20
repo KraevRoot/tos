@@ -6,12 +6,27 @@ ul li,
 .navbar {
   	background-color: #d3e7e3;
 }
-#body {
+body {
 	height: 100%;
 }
-#footer {
+.table.stories {
+	margin: auto;
+	width: 75%;
+}
+footer {
 	clear: both;
   	text-align: center;
   	position: relative;
   	background-color: #7c7c7c;
+}
+.b-login {
+	text-align: center;
+}
+.b-registration {
+	align: center;
+	width: 500px;
+	height: 700px;
+}
+.field {
+	margin-bottom: 5px;
 }

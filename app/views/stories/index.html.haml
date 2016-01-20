@@ -1,25 +1,24 @@
-%h3 Stories:
+.b-header.stories
+  %h1 Stories:
 
-.btn
-  = link_to 'New story', new_story_path
+= link_to 'New story', new_story_path, :class => 'btn'
 
-// .table.table-hover
-
-%table.table.table-striped.table-bordered.table-condensed
-  %tr
-    %th Title:
-    %th Text:
-    %th
-    %th
-    %th
-    - @stories.each do |story|
-      %tr
-        %td= link_to h(story.title), story
-        %td= simple_format h(story.description)
-        %td= render story.tags
-        %td
-          = link_to 'Edit', edit_story_path(story), :class => 'btn btn-warning'
-        %td
-          = link_to 'Destroy', story_path(story), :class => 'btn btn-danger',
-                                method: :delete, 
-                                data: { confirm: 'Are you sure?' }
+.table.stories
+  %table.table.table-striped.table-bordered.table-condensed
+    %tr
+      %th Title:
+      %th Text:
+      %th
+      %th
+      %th
+      - @stories.each do |story|
+        %tr
+          %td= link_to h(story.title), story
+          %td= simple_format h(story.description)
+          %td= render story.tags
+          %td
+            = link_to 'Edit', edit_story_path(story), :class => 'btn btn-warning'
+          %td
+            = link_to 'Destroy', story_path(story), :class => 'btn btn-danger',
+                                  method: :delete, 
+                                  data: { confirm: 'Are you sure?' }
