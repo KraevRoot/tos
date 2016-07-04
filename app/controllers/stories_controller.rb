@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  before_filter :authorize, only: [:new, :edit, :update, :destroy]
+  before_action :authorize, only: [:new, :edit, :update, :destroy]
 
   def index
     @stories = Story.all
@@ -22,6 +22,9 @@ class StoriesController < ApplicationController
 
   def edit
     @story = Story.friendly.find(params[:id])
+    if current_user.id == @story.user.id
+      render 'show'
+    end
   end
 
   def update

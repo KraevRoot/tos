@@ -7,28 +7,49 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .navbar
-      %ul
-        - if current_user
-          %li
-            = link_to 'Log Out', logout_path, :class => 'btn'
-          %li
-            = link_to 'Profile', user_path(current_user), :class => 'btn'
-          #login
-            Logged in as
-            = image_tag current_user.avatar(:thumb)
-            = current_user.email
-        - else
-          %li
-            = link_to 'Sign Up', signup_path, :class => 'btn'
-          %li
-            = link_to 'Log In', login_path, :class => 'btn'
+    #wrapper
+      %header
+        .navbar
+          %ul
+            - if current_user
+              %li
+                = link_to 'Log Out', logout_path, :class => 'btn'
+              %li
+                = link_to 'Profile', user_path(current_user), :class => 'btn'
+              %li{:id => :login}
+                = image_tag current_user.avatar(:thumb)
+                = current_user.name
+            - else
+              %li
+                = link_to 'Sign Up', signup_path, :class => 'btn'
+              %li
+                = link_to 'Log In', login_path, :class => 'btn'
 
-    - flash.each do |name, msg|
-      = content_tag :div, msg, id: "flash_#{name}"
+      .error-message
+        - flash.each do |name, msg|
+          = content_tag :div, msg, id: "flash_#{name}"
 
-    = yield
+      .left-col
+        .popular-tags
+          %p Popular tags:
+          %ol
+            %li
+              Cake
+            %li
+              Dick
+            %li
+              Dick
+            %li
+              Dick
+            %li
+              Dick
+        .b-header.stories
+          = link_to 'New Story', new_story_path
 
-    %footer
-      Created by KraevRoot:
-      = link_to 'https://github.com/KraevRoot', 'https://github.com/KraevRoot'
+      .right-col
+        %main
+          = yield
+
+      %footer
+        Created by KraevRoot:
+        = link_to 'https://github.com/KraevRoot', 'https://github.com/KraevRoot'

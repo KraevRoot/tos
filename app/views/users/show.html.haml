@@ -1,7 +1,7 @@
 %h1 Profile
-%p= current_user.name
-%p= current_user.email
-%p= image_tag current_user.avatar(:small)
+%p= @user.name
+%p= @user.email
+%p= image_tag @user.avatar(:small)
 
 = link_to 'Stories', stories_path, :class => 'btn'
 = link_to 'Edit', edit_user_path(current_user), :class => 'btn btn-warning'

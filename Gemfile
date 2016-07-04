@@ -11,13 +11,13 @@ gem 'simple_form'
 gem 'friendly_id', '~> 5.0.0'
 gem 'paperclip', '~> 4.3'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
-gem 'bootstrap', '~> 4.0.0.alpha1'
 
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'cancancan', '~> 1.10'
 
 group :development, :test do
   gem 'byebug'

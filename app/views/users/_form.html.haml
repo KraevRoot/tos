@@ -1,11 +1,16 @@
 = simple_form_for @user do |f|
   = f.error_notification
-  = f.input :name, placeholder: 'username'
-  = f.input :email, placeholder: 'email'
-  = f.input :password, placeholder: 'password'
-  = f.input :password_confirmation, placeholder: 'password'
-  = f.input :avatar, as: :file
+  .f-input
+    = f.input :name, placeholder: 'username'
+  .f-input
+    = f.input :email, placeholder: 'email'
+  .f-input
+    = f.input :password, placeholder: 'password'
+  .f-input
+    = f.input :password_confirmation, placeholder: 'password'
+  .f-input.file
+    = f.input :avatar, as: :file
   %br
   = f.button :submit
 
-= link_to 'Back', stories_path, :class => 'btn'
+= button_to 'Back', stories_path, :class => 'btn', :method => :get

@@ -28,6 +28,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+
+    if request.path != user_path(@user)
+      redirect_to @user, status: :moved_permanently
+    end
+  end
+
   private
 
   def user_params
