@@ -7,8 +7,8 @@
 #   Mayor.create(name: "Emanuel", city: cities.first)
 Story.delete_all
 User.delete_all
-rosen_user = User.create(name: "Rosenroot", email: "Rosenroot@rosenroot.by", avatar: File.new("/home/kraevroot/anis.jpg"), password: "rosenroot", password_confirmation: "rosenroot")
-dick_user = User.create(name: "Dick", email: "Dick@dick.by", avatar: File.new("/home/kraevroot/sosok.png"), password: "dickdick", password_confirmation: "dickdick")
+rosen_user = User.create(name: "Rosenroot", email: "Rosenroot@rosenroot.by", avatar: File.new("/home/kraevroot/anis.jpg"), password: "rosenroot", password_confirmation: "rosenroot", confirmed_at: DateTime.now)
+dick_user = User.create(name: "Dick", email: "Dick@dick.by", avatar: File.new("/home/kraevroot/sosok.png"), password: "dickdick", password_confirmation: "dickdick", confirmed_at: DateTime.now)
 
 stories = Story.create([{ title: "Ordinary story", description: "Hell yeah", tag_names: "haha lool imba", user: rosen_user},
 						{ title: "LoveSong", description: "This is story about love. About things what we really want, but can not have.", tag_names: "huehue hihi", user: rosen_user},

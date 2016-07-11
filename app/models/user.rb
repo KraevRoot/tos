@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_secure_password
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
   has_attached_file :avatar, styles: { thumb: '50x50#', small: '100x100#' }
   has_many :stories
 

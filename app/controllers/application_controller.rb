@@ -1,12 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   private
 
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :name << :avatar
+    devise_parameter_sanitizer.for(:account_update) << :name << :avatar
   end
-  helper_method :current_user
 
   def authorize
     redirect_to login_path, alert: 'Not authorized!' if current_user.nil?

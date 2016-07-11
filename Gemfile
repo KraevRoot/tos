@@ -18,6 +18,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'cancancan', '~> 1.10'
+gem 'devise'
+
 
 group :development, :test do
   gem 'byebug'
