@@ -22,7 +22,7 @@ class StoriesController < ApplicationController
 
   def edit
     @story = Story.friendly.find(params[:id])
-    if current_user.id == @story.user.id
+    if current_user.id != @story.user.id
       render 'show'
     end
   end

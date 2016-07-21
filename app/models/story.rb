@@ -16,11 +16,13 @@ class Story < ActiveRecord::Base
   end
 
   before_create :associate_tags
+  before_save :associate_tags
 
   private
 
   def associate_tags
     if tag_names
+      tags.clear
       tag_names.split(' ').each do |name|
         tags << Tag.where(name: name).first_or_create
       end
