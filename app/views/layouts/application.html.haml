@@ -13,7 +13,7 @@
           %ul
             - if current_user
               %li
-                = link_to 'Log Out', logout_path, :class => 'btn'
+                = link_to 'Log Out', sign_out_path, :class => 'btn'
               %li
                 = link_to 'Profile', user_path(current_user), :class => 'btn'
               %li{:id => :login}
@@ -23,7 +23,7 @@
               %li
                 = link_to 'Sign Up', new_user_registration_path, :class => 'btn'
               %li
-                = link_to 'Log In', login_path, :class => 'btn'
+                = link_to 'Log In', new_user_session_path, :class => 'btn'
 
       .error-message
         - flash.each do |name, msg|
