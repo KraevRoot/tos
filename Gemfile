@@ -22,6 +22,8 @@ gem 'devise'
 
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.5.0'
+  gem 'factory_girl_rails', '~> 4.7.0'
   gem 'byebug'
 end
 
@@ -29,4 +31,9 @@ group :development do
   gem 'rails_refactor', '~> 1.3'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
 end
