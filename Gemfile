@@ -11,6 +11,7 @@ gem 'simple_form'
 gem 'friendly_id', '~> 5.0.0'
 gem 'paperclip', '~> 4.3'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'ckeditor'
 
 gem 'jquery-rails'
 gem 'turbolinks'

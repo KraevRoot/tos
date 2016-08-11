@@ -1,7 +1,7 @@
 = simple_form_for @story do |f|
   = f.error_notification
   = f.input :title, placeholder: 'enter title'
-  = f.input :description, placeholder: 'story'
+  = f.cktext_area :description, ckeditor: {uiColor: '#C3DBE3', toolber:'mini'}
   = f.input :tag_names, placeholder: 'tags'
   = f.button :submit
 
