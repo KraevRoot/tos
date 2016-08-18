@@ -1,8 +1,8 @@
 .story-show
   %h3 Title:
-  %p= @story.title
+  %p= h(@story.title)
   %h3 Description:
-  %p= @story.description.html_safe
+  %p= raw(@story.description)
   .story_author
     %h3 Created by
     = link_to @story.user.name, user_path(:id => @story.user.id)
