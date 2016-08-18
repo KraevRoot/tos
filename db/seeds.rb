@@ -8,6 +8,7 @@
 Story.delete_all
 User.delete_all
 rosen_user = User.create(name: "Rosenroot", email: "Rosenroot@rosenroot.by", avatar: File.new("/home/kraevroot/anis.jpg"), password: "rosenroot", password_confirmation: "rosenroot", confirmed_at: DateTime.now)
+rosen_user.add_role :admin
 dick_user = User.create(name: "Dick", email: "Dick@dick.by", avatar: File.new("/home/kraevroot/sosok.png"), password: "dickdick", password_confirmation: "dickdick", confirmed_at: DateTime.now)
 
 stories = Story.create([{ title: "Ordinary story", description: "Hell yeah", tag_names: "haha lool imba", user: rosen_user},
@@ -38,5 +39,6 @@ stories = Story.create([{ title: "Ordinary story", description: "Hell yeah", tag
 						{ title: "All work WestWest and no play makes Jack a dull boy", description: "working all day can hurt you", tag_names: "hurt", user: dick_user},
 						{ title: "East or BlackBlackBlackBlack West colacolacola home is best", description: "home is your sweetest place", tag_names: "life", user: dick_user},
 						{ title: "Black CocaCocaCocaCoca  colacolacolacolatea", description: "I like it", tag_names: "tea drink", user: dick_user},
-						{ title: "Coca cola", description: "most popular drink", tag_names: "coca", user: dick_user}])
+						{ title: "Coca cola", description: "most popular drink", tag_names: "coca", user: dick_user},
+            { title: "Last night", description: "<p>Today it is a good day to die!</p><p>We all can fly to the sky, but not only we all, all other creatures from space also can do it. I had an image of my pants. The pants ware dirty. But i remembered how we with my mother cleaned it. It was very fun period. But now u sit and write this story for you. Last night i bought a chamption that called &quot;Sona&quot;, she is pretty and because of it i bought skin for her too - &quot;DJ Sona&quot;.</p><blockquote><p>If u had skin for a champion and you are bad on this champion, they call you - NOOB.</p></blockquote><p>&nbsp;Procs of this skin:</p><ol><li>Nice animations.</li><li>Different styles of music, which you can switch easilly.</li><li>Fun to play.</li></ol>", tag_names: "sona lol", user: rosen_user }])
 
