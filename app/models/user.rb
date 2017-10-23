@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   after_initialize :set_default_role, :if => :new_record?
   rolify
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
+         :recoverable, :rememberable, :trackable, :validatable, :lockable
   has_attached_file :avatar, styles: { thumb: '50x50#', small: '100x100#' }
   has_many :stories
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816154334) do
+ActiveRecord::Schema.define(version: 20171023200406) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20160816154334) do
     t.integer  "user_id"
   end
 
-  add_index "stories", ["slug"], name: "index_stories_on_slug"
+  add_index "stories", ["slug"], name: "index_stories_on_slug", unique: true
   add_index "stories", ["user_id"], name: "index_stories_on_user_id"
 
   create_table "stories_tags", id: false, force: :cascade do |t|
@@ -94,17 +94,11 @@ ActiveRecord::Schema.define(version: 20160816154334) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
     t.integer  "failed_attempts",        default: 0,  null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true
 

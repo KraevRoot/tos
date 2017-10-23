@@ -1,10 +1,8 @@
 .story-show
-  %h3 Title:
-  %p= h(@story.title)
-  %h3 Description:
-  %p= raw(@story.description)
+  %h3.story_title.centered= "Title: #{h(@story.title)}"
+  .story_description= raw(@story.description)
   .story_author
-    %h3 Created by
+    Created by
     = link_to @story.user.name, user_path(:id => @story.user.id)
 
   = link_to 'Stories', stories_path, :class => 'btn'

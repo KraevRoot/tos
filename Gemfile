@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.8'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -12,6 +12,7 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'paperclip', '~> 4.3'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'ckeditor'
+gem 'json', github: 'flori/json', branch: 'v1.8'
 
 gem 'jquery-rails'
 gem 'turbolinks'
